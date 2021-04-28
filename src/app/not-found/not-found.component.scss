@@ -1,0 +1,21 @@
+.not-found {
+  margin: 0 auto;
+  text-align: center;
+
+  .error {
+    color: red;
+  }
+}
+
+.back-to-home {
+  margin: 0 auto;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}

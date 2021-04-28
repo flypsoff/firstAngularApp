@@ -1,0 +1,11 @@
+<p>Name: {{ name }}</p>
+<p>Surname: {{ surname }}</p>
+<button (click)="getFullName()">Get full name</button>
+
+<h4 *ngIf="fullName != ''; else elseJD">{{ fullName }}</h4>
+<ng-template #elseJD><h4>John Deer</h4></ng-template>
+
+<button (click)="resetFullName()">Reset full name</button>
+
+<br />
+<a routerLink="/about">About</a>
