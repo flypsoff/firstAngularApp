@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaf587;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  .logo {
+    width: 50%;
+  }
+  .nav-menu {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      padding: 5px;
+    }
+
+    div {
+      margin: 0 10px;
+    }
+  }
+}
