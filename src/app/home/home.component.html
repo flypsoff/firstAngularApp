@@ -1,11 +1,40 @@
-<p>Name: {{ name }}</p>
-<p>Surname: {{ surname }}</p>
-<button (click)="getFullName()">Get full name</button>
+<form>
+  <!--  
+  ngModelOptions - allows us to modify "name"
+  [(ngModel)] - two way binding
+  -->
+  <mat-form-field class="form-input">
+    <mat-label>Enter your name</mat-label>
+    <input
+      matInput
+      placeholder="Enter your name"
+      [(ngModel)]="name"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </mat-form-field>
+  <!-- 
+    also using two way binding but without [(ngModel)]
+  -->
+  <mat-form-field class="form-input">
+    <mat-label>Enter your surname</mat-label>
+    <input
+      matInput
+      placeholder="Enter your surname"
+      #inputSurname
+      [value]="surname"
+      (change)="surnameHendler(inputSurname.value)"
+    />
+  </mat-form-field>
 
-<h4 *ngIf="fullName != ''; else elseJD">{{ fullName }}</h4>
-<ng-template #elseJD><h4>John Deer</h4></ng-template>
+  <button mat-raised-button color="primary" (click)="handleAlias()">
+    Get alias
+  </button>
+</form>
 
-<button (click)="resetFullName()">Reset full name</button>
+<div *ngIf="alias; else elseAlias" class="alias">
+  <h3>Your alias: {{ alias }}</h3>
+</div>
 
-<br />
-<a routerLink="/about">About</a>
+<ng-template #elseAlias>
+  <h3 class="error">{{ aliasError }}</h3>
+</ng-template>

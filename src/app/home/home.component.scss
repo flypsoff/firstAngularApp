@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  .form-input {
+    width: 50%;
+    min-width: 200px;
+    padding: 10px 0;
+  }
+
+  button {
+    width: 100px;
+  }
+}
+
+.alias {
+  padding-top: 10px;
+}
+
+.error {
+  color: red;
+}

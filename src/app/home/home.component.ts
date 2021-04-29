@@ -1,26 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  name = 'vlad';
-  surname = 'sevostianov';
-  fullName = '';
+export class HomeComponent implements OnInit, OnDestroy {
+  name = '';
+  surname = '';
+  alias = '';
+  aliasError = '';
 
-  getFullName() {
-    this.fullName = this.name + ' ' + this.surname;
+  surnameHendler(value: string): void {
+    this.surname = value;
   }
 
-  resetFullName() {
-    this.fullName = '';
+  handleAlias() {
+    if (!this.name || !this.surname) {
+      this.alias = '';
+      this.aliasError = 'Please enter name and surname';
+      return;
+    }
+    const changedName = this.name.slice(0, this.name.length / 2);
+    const changedSurname = this.surname.slice(this.surname.length / 2);
+    this.alias = changedName + changedSurname;
+    this.aliasError = '';
+    this.name = '';
+    this.surname = '';
   }
-
-  constructor() {}
 
   ngOnInit(): void {
-    console.log('HOME page was mount');
+    console.log('HOME page was inited');
+  }
+  ngOnDestroy(): void {
+    console.log('HOME page was destroyed');
   }
 }
