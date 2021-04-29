@@ -1,0 +1,32 @@
+<div class="pepe-main">
+  <div class="pepe-menu">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="showPepe()"
+      [disabled]="disable"
+    >
+      Show pepe
+    </button>
+    <button mat-raised-button [disabled]="!disable" (click)="resetPepe()">
+      Reset
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      [disabled]="!disable"
+      (click)="addSpeedForPepe()"
+    >
+      Add speed
+    </button>
+  </div>
+
+  <div *ngIf="isPepe; else elseNotShow">
+    <img
+      src="https://i.guim.co.uk/img/media/327e46c3ab049358fad80575146be9e0e65686e7/0_0_1023_742/master/1023.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=331a1bc4f5d7a96a6131f4f142065662"
+      alt="pepe"
+    />
+  </div>
+
+  <ng-template #elseNotShow> </ng-template>
+</div>

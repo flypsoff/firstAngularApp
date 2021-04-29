@@ -1,0 +1,17 @@
+.pepe-main {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+
+  .pepe-menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  img {
+    padding-top: 20px;
+    width: 80%;
+  }
+}
