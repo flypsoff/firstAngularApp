@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    .input {
+      width: 100%;
+    }
+  }
+
+  .chart {
+    width: 78;
+  }
+}

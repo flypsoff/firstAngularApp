@@ -1,0 +1,52 @@
+<form>
+  <div>
+    <h3>Currency</h3>
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>Choose currency</mat-label>
+      <mat-select [(value)]="typeOfCurrency">
+        <mat-option *ngFor="let currency of currencies" [value]="currency">
+          {{ currency }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <h3>From</h3>
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>DD/MM/YYYY</mat-label>
+      <input
+        matInput
+        [matDatepicker]="startDate"
+        (dateInput)="handleStartDate($event)"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="startDate"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <h3>To</h3>
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>DD/MM/YYYY</mat-label>
+      <input
+        matInput
+        [matDatepicker]="endDate"
+        (dateInput)="handleEndDate($event)"
+      />
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="handleCurrency()">
+      Get currency
+    </button>
+  </div>
+</form>
+
+<app-chart class="chart"></app-chart>
