@@ -2,14 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { ChartComponent } from './chart/chart.component';
 import { NbuService } from './nbu.service';
-
-export interface NBUI {
-  r030: number;
-  txt: string;
-  rate: number;
-  cc: string;
-  exchangedate: string;
-}
+import { NBUI } from './interfaces/nbu-iterface';
 
 @Component({
   selector: 'app-currency',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { NBUI } from '../currency.component';
+import { NBUI } from '../interfaces/nbu-iterface';
 
 @Component({
   selector: 'app-chart',
