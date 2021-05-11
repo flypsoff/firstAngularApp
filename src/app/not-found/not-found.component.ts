@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent {
-  constructor(private _router: Router) {}
+  constructor(private router: Router) {}
 
   toItems(): void {
-    this._router.navigate(['/items', '99'], {
+    this.router.navigate(['/items', '99'], {
       queryParams: { name: 'John' },
     });
   }

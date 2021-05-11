@@ -18,7 +18,7 @@
       <input
         matInput
         [matDatepicker]="startDate"
-        (dateInput)="handleStartDate($event)"
+        (dateInput)="getStartDate($event)"
       />
       <mat-datepicker-toggle
         matSuffix
@@ -35,7 +35,7 @@
       <input
         matInput
         [matDatepicker]="endDate"
-        (dateInput)="handleEndDate($event)"
+        (dateInput)="getEndDate($event)"
       />
       <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
       <mat-datepicker #endDate></mat-datepicker>
@@ -43,7 +43,7 @@
   </div>
 
   <div>
-    <button mat-raised-button color="primary" (click)="handleCurrency()">
+    <button mat-raised-button color="primary" (click)="getCurrency()">
       Get currency
     </button>
   </div>

@@ -11,15 +11,15 @@ export class ItemsComponent {
   id!: number;
   name!: string;
 
-  private _routeSubscription: Subscription;
-  private _querySubscription: Subscription;
+  private routeSubscription: Subscription;
+  private querySubscription: Subscription;
 
-  constructor(private _activatedRoute: ActivatedRoute) {
-    this._routeSubscription = this._activatedRoute.params.subscribe((param) => {
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.routeSubscription = this.activatedRoute.params.subscribe((param) => {
       console.log('param', param);
       this.id = param.id;
     });
-    this._querySubscription = this._activatedRoute.queryParams.subscribe(
+    this.querySubscription = this.activatedRoute.queryParams.subscribe(
       (query) => {
         console.log('query', query);
         this.name = query.name;
