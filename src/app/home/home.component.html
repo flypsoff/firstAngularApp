@@ -1,4 +1,4 @@
-<form>
+<form #myForm="ngForm">
   <!--  
   ngModelOptions - allows us to modify "name"
   [(ngModel)] - two way binding
@@ -9,9 +9,16 @@
       matInput
       placeholder="Enter your name"
       [(ngModel)]="name"
+      #qwerty="ngModel"
+      name="Input for name"
+      required
+      (ngModelChange)="onChangeName()"
       [ngModelOptions]="{ standalone: true }"
     />
   </mat-form-field>
+  <div [hidden]="qwerty.touched">
+    <h3>Touche input name</h3>
+  </div>
   <!-- 
     also using two way binding but without [(ngModel)]
   -->
@@ -26,7 +33,11 @@
     />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="handleAlias()">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="handleAlias(qwerty, myForm)"
+  >
     Get alias
   </button>
 </form>

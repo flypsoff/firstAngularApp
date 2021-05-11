@@ -5,4 +5,28 @@
   <span class="erorPage redirect"
     >Get <a routerLink="/redirect">redirect</a> to nope</span
   >
+  <br />
+  <span
+    ><a [routerLink]="['/items', '10']" [queryParams]="{ name: 'vlad' }"
+      >Params with query</a
+    ></span
+  >
+</div>
+
+<app-about-test #aboutTest></app-about-test>
+
+<div>
+  <h3>Using #</h3>
+  <p>{{ aboutTest.typeOfEvent }}</p>
+  <!-- aboutTest we can use only inside this template -->
+  <button (click)="aboutTest.increment()">Add one</button>
+  <button (click)="aboutTest.decrement()">Remove one</button>
+</div>
+
+<div>
+  <h3>Using @ViewChild</h3>
+  <p>{{ aboutTest.typeOfEvent }}</p>
+  <!-- we using @ViewChild to inc and dec child count -->
+  <button (click)="inc()">Add one</button>
+  <button (click)="dec()">Remove one</button>
 </div>

@@ -6,20 +6,20 @@ import { Component, OnDestroy } from '@angular/core';
   styleUrls: ['./nope.component.scss'],
 })
 export class NopeComponent implements OnDestroy {
-  isPepe: boolean = false;
-  count: number = 0;
-  time: number = 1000;
+  isPepe = false;
+  count = 0;
+  time = 1000;
   timerID: any;
-  disable: boolean = false;
+  disable = false;
 
-  resetPepe() {
+  resetPepe(): void {
     clearInterval(this.timerID);
     this.isPepe = !this.isPepe;
     this.time = 1000;
     this.disable = false;
   }
 
-  showPepe() {
+  showPepe(): void {
     if (!this.disable) {
       this.disable = true;
     }
@@ -28,7 +28,7 @@ export class NopeComponent implements OnDestroy {
     }, this.time);
   }
 
-  addSpeedForPepe() {
+  addSpeedForPepe(): void {
     if (this.time > 0) {
       this.time = this.time - 100;
     }

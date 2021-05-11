@@ -1,21 +1,42 @@
 <header>
+  <div class="header-ad">
+    {{ text }}
+    <button
+      mat-icon-button
+      color="warn"
+      aria-label="Example icon button with a heart icon"
+      (click)="handleClick()"
+    >
+      <mat-icon [ngClass]="{ moreThanFive: count > 3 }">favorite</mat-icon>
+    </button>
+  </div>
   <mat-toolbar class="header">
     <div class="logo">
-      <a routerLink="/">Mappy</a>
+      <!-- appColor is our directive -->
+      <a routerLink="/" appColor><ng-content></ng-content></a>
+      <!--
+        everything that between <app-header>...</app-header> will be shown here -> <ng-content></ng-content>
+        in our case <app-header>{{ logo }}</app-header> -> "Mappy"
+      -->
     </div>
     <div class="nav-menu">
       <div>
-        <span matBadgeOverlap="true" matBadgeSize="small"
-          ><a routerLink="/">Home</a></span
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          appColor
+          [routerLinkActiveOptions]="{ exact: true }"
+          >About</a
+        >
+        <!-- routerLinkActiveOptions = class .active will work only for exact path!  -->
+      </div>
+      <div>
+        <a routerLink="/currency" routerLinkActive="active" appColor
+          >Currency</a
         >
       </div>
       <div>
-        <span matBadgeOverlap="true" matBadgeSize="small"
-          ><a routerLink="/about">About</a></span
-        >
-      </div>
-      <div>
-        <a routerLink="/nope">Nope</a>
+        <a routerLink="/nope" routerLinkActive="active" appColor>Nope</a>
       </div>
     </div>
   </mat-toolbar>
