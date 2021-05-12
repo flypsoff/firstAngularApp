@@ -10,6 +10,9 @@ import { Subscription } from 'rxjs';
 export class ItemsComponent {
   id!: number;
   name!: string;
+  pi = 3.14;
+  date = Date.now();
+  text = 'Welcome to the home, boii!';
 
   private routeSubscription: Subscription;
   private querySubscription: Subscription;

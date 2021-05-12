@@ -1,5 +1,5 @@
 <h3>ID: {{ id }}</h3>
-<h3>Name: {{ name }}</h3>
+<h3>Name(with pipe uppercase): {{ name | slice: 3:5 }}</h3>
 <div>
   <a [routerLink]="['/items', '20']">Only params</a>
   <br />
@@ -15,4 +15,18 @@
     <a routerLink="details">details</a>
   </div>
   <router-outlet></router-outlet>
+</div>
+
+<div>
+  <h2>PIPES</h2>
+  <span>date: {{ date | date: "dd.mm.yyyy" }}</span
+  ><br />
+  <span>pi: {{ pi | number: "2.5-10" }}</span>
+  <br />
+  <span
+    >text: {{ text | slice: 0:7 | uppercase }}
+    {{ text | slice: 7 | lowercase }}</span
+  >
+  <br />
+  <span>Own pipe: {{ text | format }}</span>
 </div>

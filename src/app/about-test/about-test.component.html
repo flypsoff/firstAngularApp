@@ -1,5 +1,5 @@
 <div>
-  <h3>type: {{ typeOfEvent?.type }}</h3>
+  <h3>type: {{ typeOfEvent?.type | uppercase }}</h3>
   <input (change)="getValue($event)" [value]="text" />
   <br />
   <span>{{ count }}</span>

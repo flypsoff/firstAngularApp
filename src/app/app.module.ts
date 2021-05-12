@@ -21,6 +21,7 @@ import { ChartComponent } from './currency/chart/chart.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemsInfoComponent } from './items/items-info/items-info.component';
 import { ItemsDetailsComponent } from './items/items-details/items-details.component';
+import { FormatPipe } from './pipes/format.pipe';
 @NgModule({
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { ItemsDetailsComponent } from './items/items-details/items-details.compo
     ItemsComponent,
     ItemsInfoComponent,
     ItemsDetailsComponent,
+    FormatPipe,
   ],
   providers: [
     {
